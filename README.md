@@ -1,5 +1,6 @@
 # ai_gallery
 Prompt chatgpt 3.5-turbo to write a poem and Dall-e to draw it inspired by the style of several artists.
+Visit Our Blog at Tapgaze: 
 
 ---------------------------------------------
 ```
