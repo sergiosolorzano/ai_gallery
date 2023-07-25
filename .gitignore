@@ -1,0 +1,10 @@
+**/__pycache__/
+**/creds.json
+**/.idea/
+**/.venv
+**/venv/
+**/.vscode/
+**/openai-env/
+**/openai
+**/os
+**/images/
