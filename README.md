@@ -1,6 +1,9 @@
 # ai_gallery
 Prompt chatgpt 3.5-turbo to write a poem and Dall-e to draw it inspired by the style of several artists.
 
+---------------------------------------------
+```
+Repo File Structure
 .
 ├── creds.json            #enter your Azure OpenAI API credentials, sample below
 ├── descriptions.txt      #poem description
@@ -29,4 +32,5 @@ Complete creds.json with your Azure OpenAI credentials:
         "OPENAI_API_DEPLOYMENT_NAME": "DOES_NOT_APPLY_NA"
     }
 }
-
+---------------------------------------------
+```
