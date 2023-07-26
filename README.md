@@ -38,3 +38,6 @@ Complete creds.json with your Azure OpenAI credentials:
 }
 ---------------------------------------------
 ```
+
+Inputs at:
+user_inputs.py and creds.json
