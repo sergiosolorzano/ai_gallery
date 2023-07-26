@@ -4,8 +4,8 @@ Prompt chatgpt 3.5-turbo to write a poem and Dall-e to draw it inspired by the s
 Visit Our [Blog at Tapgaze how we made it, poems and image collection: We ask ChatGPT To write Poems and Dall-E to paint them](https://tapgaze.com/blog/ai_poem_gallery/)
 
 <img width="1913" alt="blog-aigallery" src="https://github.com/sergiosolorzano/ai_gallery/assets/24430655/ab348373-5d1b-4241-9ecb-f777aafee288">
-
-
+    
+    
 Repo File Structure:
 ![code_snapshot-scaled copy](https://github.com/sergiosolorzano/ai_gallery/assets/24430655/6ed05cc1-7aae-4ba4-8602-895a2b57bb50)
 
