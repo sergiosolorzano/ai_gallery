@@ -24,6 +24,7 @@ def main():
 
     #bool to call chatgpt to write poems
     write_poems = True
+    show_images_runtime = False
 
     #load config
     path_to_file = os.path.join(os.getcwd(), "creds.json")
@@ -63,57 +64,59 @@ def main():
         #print("tail dir", poem_tail_dir)
         poem_fn_path = os.path.join(poem_dir_path, poem_tail_dir + ".txt")
         #print("poem_fn_path", poem_fn_path)
-        poem_content = read_file_into_title_and_poem(poem_fn_path)
+        if os.path.exists(poem_fn_path):
+            poem_content = read_file_into_title_and_poem(poem_fn_path)
 
-        poem_title = poem_content[0].strip()
-        poem_text = ''.join(poem_content[1:])
-        #print("Poem Title:",poem_title,"Poem: ",poem_text)
-        full_prompt = "\nPoem Title:" + poem_title + "\nPoem: " + poem_text
-        #print("full prompt", full_prompt)
+            poem_title = poem_content[0].strip()
+            poem_text = ''.join(poem_content[1:])
+            #print("Poem Title:",poem_title,"Poem: ",poem_text)
+            full_prompt = "\nPoem Title:" + poem_title + "\nPoem: " + poem_text
+            #print("full prompt", full_prompt)
 
-        #create image dirs
-        #print("image_dir",poem_dir_path)
-        generate_dir(poem_dir_path)
+            #create image dirs
+            #print("image_dir",poem_dir_path)
+            generate_dir(poem_dir_path)
 
-        #request image
-        for painter in inputs.painter_list:
-            print("At painter:",painter)
-            #input("Now requesting dalle painter.")
-            resp_data = send_dalle_request.send_request(full_prompt, res, num, openai, poem_writer_style_list, poem_tail_dir, painter)
-            print("***resp_data received",resp_data)
+            #request image
+            for painter in inputs.painter_list:
+                print("At painter:",painter)
+                #input("Now requesting dalle painter.")
+                resp_data = send_dalle_request.send_request(full_prompt, res, num, openai, poem_writer_style_list, poem_tail_dir, painter)
+                print("***resp_data received",resp_data)
 
-            #store and show image
-            counter = 0
-            image_name = os.path.basename(os.path.normpath(poem_dir_path))
-            if "Error" not in resp_data:
-                for image in resp_data:
-                    print("***image in resp_data",image)
-                    if "Error" not in image:
-                        image_name = image_name + '_' + painter.replace(" ", "") + '_' + str(counter) + '.png'
-                        print("image_name",image_name)
-                        image_path = os.path.join(poem_dir_path, image_name)
-                        print("Store image at " + image_path)
+                #store and show image
+                counter = 0
+                image_name = os.path.basename(os.path.normpath(poem_dir_path))
+                if "Error" not in resp_data:
+                    for image in resp_data:
+                        print("***image in resp_data",image)
+                        if "Error" not in image:
+                            image_name = image_name + '_' + painter.replace(" ", "") + '_' + str(counter) + '.png'
+                            print("image_name",image_name)
+                            image_path = os.path.join(poem_dir_path, image_name)
+                            print("Store image at " + image_path)
 
-                        #download and store images for this poem
-                        image_url = get_url(image)
-                        if image_url != "":
-                            store_image(image_url, image_path)
-                            counter += 1
-                            print(f"url {image_path}:", image_url)
-                            # Open and display image
-                            image = Image.open(image_path)
-                            image.show(title=image_name)
-                            #input("End of image loop from response, now another if there is one.")
-                    else:
-                        dalle_errors += 1
-                        dalle_errors_list.append(image_name+"_"+painter)
-                        print("Error getting this image -this img response" + image + " full response" + resp_data)
-            else:
-                dalle_errors += 1
-                dalle_errors_list.append(image_name+"_"+painter)
+                            #download and store images for this poem
+                            image_url = get_url(image)
+                            if image_url != "":
+                                store_image(image_url, image_path)
+                                counter += 1
+                                print(f"url {image_path}:", image_url)
+                                # Open and display image
+                                if show_images_runtime:
+                                    image = Image.open(image_path)
+                                    image.show(title=image_name)
+                                    #input("End of image loop from response, now another if there is one.")
+                        else:
+                            dalle_errors += 1
+                            dalle_errors_list.append(image_name+"_"+painter)
+                            print("Error getting this image -this img response" + image + " full response" + resp_data)
+                else:
+                    dalle_errors += 1
+                    dalle_errors_list.append(image_name+"_"+painter)
 
-        end_time = datetime.datetime.now()
-        time_elapsed = end_time - start_time
+            end_time = datetime.datetime.now()
+            time_elapsed = end_time - start_time
     print("End of Script. Time elapsed:", time_elapsed, "Dalle errors:",dalle_errors, "at", dalle_errors_list)
 
 def get_url(response):

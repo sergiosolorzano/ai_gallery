@@ -1,16 +1,11 @@
 Writer_style:Poem_directory:Poem_description
-Simon Armitage:Machines_Love: how machines will feel when they can feel
-Simon Armitage:Machines_Rewrite:how machines will rewrite human history
 Simon Armitage:Climate_Change_1:humans must take action yesterday, urgent climate action can secure a liveable future for all
 Simon Armitage:Climate_Change_2:Global biodiversity has declined alarmingly in half a century
 Simon Armitage:Sports_matter:sports means so much to humanity
 Simon Armitage:Hardcopy_Books: Are physical books still relevant today?
 Simon Armitage:Mobile_Dependence: Smartphones are now extensions of humankind's abilities and personality
 Simon Armitage:Local_shops: When society looks back to the loss of having local shops it will be too late
-Simon Armitage:Smoking_is_a_right: being forbidden to smoke is a loss of human rights, all should have this right to choose
 Simon Armitage:Artists_replacement: Artists originality could never be replaced because it's a gift
 Simon Armitage:Maths_learning: Learning maths from top-down instead of bottom-up is more engaging
-Simon Armitage:Dog_friends: Dogs are happy by nature and ready to make people feel better
+Simon Armitage:Dog_friends: Dogs are happy by nature and always keen to make people feel better
 Simon Armitage:Water: one of the greatest satisfactions is a glass of water when you need it
-Simon Armitage:Love_and_selfishness: People's ability to love is a balance with their own selfishness
-Simon Armitage:Childrens_expectations: Children are loved so much but the life that awaits is never that loving
