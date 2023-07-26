@@ -60,7 +60,6 @@ def get_text_from_file():
             elements = line.strip().split(":")
             this_poem_list = []
             for e in elements:
-                #print("**element", e)
                 this_poem_list.append(e)
             description_list.append(this_poem_list)
 
