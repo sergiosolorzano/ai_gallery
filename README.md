@@ -5,6 +5,7 @@ Batch prompt from file for chatgpt 3.5-turbo to write poems inspired on a poet w
 
 Visit Our [Blog at Tapgaze how we made it, poems and image collection: We ask ChatGPT To write Poems and Dall-E to paint them](https://tapgaze.com/blog/ai_poem_gallery/)
 
+
 <img width="1913" alt="blog-aigallery" src="https://github.com/sergiosolorzano/ai_gallery/assets/24430655/ab348373-5d1b-4241-9ecb-f777aafee288">
 
 ---------------------------------------------
