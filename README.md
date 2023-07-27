@@ -14,7 +14,8 @@ Batch image results available on augmented reality for iPhone at the [Tapgaze ap
 
 ---------------------------------------------    
 Repo File Structure:
-![code_snapshot-scaled copy](https://github.com/sergiosolorzano/ai_gallery/assets/24430655/6ed05cc1-7aae-4ba4-8602-895a2b57bb50)
+
+![code_snapshot-scaled copy](https://github.com/sergiosolorzano/ai_gallery/assets/24430655/ed5a5781-084d-43a1-b0df-1fe253039dcd)
 
 ---------------------------------------------
 ```
