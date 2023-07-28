@@ -1,3 +1,4 @@
+
 # ai_gallery
 
 <p align="center">
@@ -20,7 +21,7 @@ Batch image results available on augmented reality for iPhone at the [Tapgaze ap
 
 ![code_snapshot-scaled copy](https://github.com/sergiosolorzano/ai_gallery/assets/24430655/ed5a5781-084d-43a1-b0df-1fe253039dcd)
 
-<video width="630" height="300" src="https://github.com/sergiosolorzano/ai_gallery/assets/24430655/cfb10b3b-9aa1-430d-8994-ef4b0d378c6f" controls="controls" muted="muted" playsinline="playsinline">
+<video src="https://github.com/sergiosolorzano/ai_gallery/assets/24430655/6962f72a-3057-4cac-9fbe-91c9e4f99be4" controls="controls" muted="muted" playsinline="playsinline">
       </video>
 
 ---------------------------------------------
