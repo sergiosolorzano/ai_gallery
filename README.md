@@ -12,7 +12,6 @@ Visit Our [Blog at Tapgaze how we made it, poems and image collection: We ask Ch
 Batch image results available on augmented reality for iPhone at the [Tapgaze app](https://apps.apple.com/gb/app/tapgaze/id1534427791).
 
 ---------------------------------------------    
-Repo File Structure:
 
 ![code_snapshot-scaled copy](https://github.com/sergiosolorzano/ai_gallery/assets/24430655/ed5a5781-084d-43a1-b0df-1fe253039dcd)
 
@@ -21,6 +20,7 @@ Repo File Structure:
 
 ---------------------------------------------
 ```
+Repo File Structure:
 .
 ├── creds.json            #enter your Azure OpenAI API credentials, sample below
 ├── descriptions.txt      #poem description
