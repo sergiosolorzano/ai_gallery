@@ -4,8 +4,8 @@ def send_request(userprompt, res, num, openai, poem_style_list, poem_tail_dir, p
     print("Sending request for userprompt:", userprompt, "\nres", res, "\nnum", num)
 
     #get image style
-    poem_styles = [sublist for sublist in poem_style_list if sublist[0] == poem_tail_dir]
-    img_style = f'Draw this poem {painter_style} style:'
+    poem_styles = [sublist for sublist in poem_style_list if sublist[0] == poem_tail_dir] #todo
+    img_style = f'Draw this description {painter_style} style:'
     userprompt = img_style + userprompt
     try:
         response = openai.Image.create(
