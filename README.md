@@ -1,6 +1,6 @@
 # ai_gallery
 
-Batch prompt from file for chatgpt 3.5-turbo to write poems inspired on a poet writing style and Dall-e to draw these inspired by the style of several artists. Requests to Azure OpenAI API.
+Batch prompt from file for chatgpt 3.5-turbo to write poems inspired on a poet writing style, describe what an image looks like for this poem, and Dall-e to draw these inspired by the style of several artists. Requests to Azure OpenAI API.
 
 <p align="center">
 <img width="150" alt="star" src="https://github.com/sergiosolorzano/ai_gallery/assets/24430655/3c0b02ea-9b11-401a-b6f5-c61b69ad651b">
@@ -8,9 +8,15 @@ Batch prompt from file for chatgpt 3.5-turbo to write poems inspired on a poet w
 
 ---------------------------------------------
 
-Visit Our [Blog at Tapgaze how we made it, poems and image collection: We ask ChatGPT To write Poems and Dall-E to paint them](https://tapgaze.com/blog/ai_poem_gallery/)
+The original project code has been enhanced by adding an intermediate step after a poem is generated, by also asking chatgpt to generate a description of what an image looks like for the abstract poem words.
 
-<img width="1883" alt="blog-aigallery2" src="https://github.com/sergiosolorzano/ai_gallery/assets/24430655/7de6f1c7-54be-407f-8c97-530a85d16850">
+<img width="1460" alt="image" src="https://github.com/sergiosolorzano/ai_gallery/assets/24430655/769771f5-ad24-4bd1-9f1d-eb8ef829477c">
+
+Original two-step approach visit Our [Blog at Tapgaze how we made it, poems and image collection: We ask ChatGPT To write Poems and Dall-E to paint them](https://tapgaze.com/blog/ai_poem_gallery/)
+
+Enhanced three-step approach and rationale visit Our [Blog at Tapgaze how we made it, poems and image collection: We ask ChatGPT To write Poems and Dall-E to paint them](https://tapgaze.com/blog/chained-specialized-ai-models-to-accomplish-a-task/)
+
+<img width="1297" alt="image" src="https://github.com/sergiosolorzano/ai_gallery/assets/24430655/27c9dfdc-29d6-4117-99fe-de55912beeb6">
 
 ---------------------------------------------
 
@@ -59,5 +65,8 @@ Complete creds.json with your Azure OpenAI credentials:
 
 Inputs at:
 user_inputs.py and creds.json
+
+N.B: At user_inputs.py set bool <use_poem_description> for Chatgpt to generate a description of an image for each poem. If false, chatgpt generates each poem and Dall-e generates the image:
+use_poem_description = True
 
 ---------------------------------------------
