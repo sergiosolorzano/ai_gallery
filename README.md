@@ -12,9 +12,9 @@ The original project code has been enhanced by adding an intermediate step after
 
 <img width="1460" alt="image" src="https://github.com/sergiosolorzano/ai_gallery/assets/24430655/769771f5-ad24-4bd1-9f1d-eb8ef829477c">
 
-Original two-step approach visit Our [Blog at Tapgaze how we made it, poems and image collection: We ask ChatGPT To write Poems and Dall-E to paint them](https://tapgaze.com/blog/ai_poem_gallery/)
+To read about the original two-step approach visit Our [Blog at Tapgaze how we made it, poems and image collection: We ask ChatGPT To write Poems and Dall-E to paint them](https://tapgaze.com/blog/ai_poem_gallery/)
 
-Enhanced three-step approach and rationale visit Our [Blog at Tapgaze how we made it, poems and image collection: We ask ChatGPT To write Poems and Dall-E to paint them](https://tapgaze.com/blog/chained-ai-models/)
+To read about the enhanced three-step approach and rationale visit Our [Blog at Tapgaze how we made it, poems and image collection: We ask ChatGPT To write Poems and Dall-E to paint them](https://tapgaze.com/blog/chained-ai-models/)
 
 <img width="1297" alt="image" src="https://github.com/sergiosolorzano/ai_gallery/assets/24430655/27c9dfdc-29d6-4117-99fe-de55912beeb6">
 
