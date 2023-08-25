@@ -8,7 +8,7 @@ Batch prompt from file for chatgpt 3.5-turbo to write poems inspired on a poet w
 
 ---------------------------------------------
 
-Visit Our [Blog at Tapgaze how we made it, poems and image collection: We ask ChatGPT To write Poems and Dall-E to paint them](https://tapgaze.com/blog/ai_poem_gallery/)
+Visit Our [Blog at Tapgaze how we made it, poems and image collection: Part 1: We ask ChatGPT To write Poems and Dall-E to paint them](https://tapgaze.com/blog/ai_poem_gallery/)
 
 <img width="1883" alt="blog-aigallery2" src="https://github.com/sergiosolorzano/ai_gallery/assets/24430655/7de6f1c7-54be-407f-8c97-530a85d16850">
 
@@ -56,6 +56,8 @@ Complete creds.json with your Azure OpenAI credentials:
 }
 ---------------------------------------------
 ```
+
+See code decorator branch for ChatGPT assisted poem description. You can read more about this generation flow at [our Blog at Tapgaze: Part II: Chained Specialized AI Models Deliver Better Results](https://tapgaze.com/blog/chained-ai-models/)
 
 Inputs at:
 user_inputs.py and creds.json
