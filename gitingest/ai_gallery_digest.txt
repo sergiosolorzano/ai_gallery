@@ -5,10 +5,10 @@ Repository: sergiosolorzano/ai_gallery
 Files analyzed: 7
 
 Estimated tokens: 6.3k
-�── request_manager.py
-    ├── send_dalle_request.py
-    ├── send_gpt35_request.py
-    └── user_inputs.py
+œâ”€â”€ request_manager.py
+    â”œâ”€â”€ send_dalle_request.py
+    â”œâ”€â”€ send_gpt35_request.py
+    â””â”€â”€ user_inputs.py
 
 ================================================
 File: README.md
@@ -42,15 +42,15 @@ Batch image results available on augmented reality for iPhone at the [Tapgaze ap
 ```
 Repo File Structure:
 .
-â”œâ”€â”€ creds.json            #enter your Azure OpenAI API credentials, sample below
-â”œâ”€â”€ descriptions.txt      #poem description
-â”œâ”€â”€ images                #poem and dalle output
-â”œâ”€â”€ LICENSE    
-â”œâ”€â”€ README.md
-â”œâ”€â”€ request_manager.py    #manager calling scripts to send requests to chatgpt3.5 and dalle models
-â”œâ”€â”€ send_dalle_request.py #Azure OpenAI send request method to dalle
-â”œâ”€â”€ send_gpt35_request.py #Azure OpenAI send request method to gpt3.5_turbo
-â””â”€â”€ user_inputs.py        #request inputs
+Ã¢â€Å“Ã¢â€â‚¬Ã¢â€â‚¬ creds.json            #enter your Azure OpenAI API credentials, sample below
+Ã¢â€Å“Ã¢â€â‚¬Ã¢â€â‚¬ descriptions.txt      #poem description
+Ã¢â€Å“Ã¢â€â‚¬Ã¢â€â‚¬ images                #poem and dalle output
+Ã¢â€Å“Ã¢â€â‚¬Ã¢â€â‚¬ LICENSE    
+Ã¢â€Å“Ã¢â€â‚¬Ã¢â€â‚¬ README.md
+Ã¢â€Å“Ã¢â€â‚¬Ã¢â€â‚¬ request_manager.py    #manager calling scripts to send requests to chatgpt3.5 and dalle models
+Ã¢â€Å“Ã¢â€â‚¬Ã¢â€â‚¬ send_dalle_request.py #Azure OpenAI send request method to dalle
+Ã¢â€Å“Ã¢â€â‚¬Ã¢â€â‚¬ send_gpt35_request.py #Azure OpenAI send request method to gpt3.5_turbo
+Ã¢â€â€Ã¢â€â‚¬Ã¢â€â‚¬ user_inputs.py        #request inputs
 
 Complete creds.json with your Azure OpenAI credentials:
 {
