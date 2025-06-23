@@ -1,0 +1,624 @@
+Analysis complete! Output written to: digest.txt
+
+Summary:
+Repository: sergiosolorzano/ai_gallery
+Files analyzed: 7
+
+Estimated tokens: 6.3k
+�── request_manager.py
+    ├── send_dalle_request.py
+    ├── send_gpt35_request.py
+    └── user_inputs.py
+
+================================================
+File: README.md
+================================================
+# ai_gallery
+
+Batch prompt from file for chatgpt 3.5-turbo to write poems inspired on a poet writing style and Dall-e to draw these inspired by the style of several artists. Requests to Azure OpenAI API.
+
+<p align="center">
+<img width="150" alt="star" src="https://github.com/sergiosolorzano/ai_gallery/assets/24430655/3c0b02ea-9b11-401a-b6f5-c61b69ad651b">
+</p>
+
+---------------------------------------------
+
+Visit Our [Blog at Tapgaze how we made it, poems and image collection: Part 1: We ask ChatGPT To write Poems and Dall-E to paint them](https://tapgaze.com/blog/ai_poem_gallery/)
+
+<img width="1883" alt="blog-aigallery2" src="https://github.com/sergiosolorzano/ai_gallery/assets/24430655/7de6f1c7-54be-407f-8c97-530a85d16850">
+
+---------------------------------------------
+
+Batch image results available on augmented reality for iPhone at the [Tapgaze app](https://apps.apple.com/gb/app/tapgaze/id1534427791).
+
+---------------------------------------------    
+
+![code_snapshot-scaled copy](https://github.com/sergiosolorzano/ai_gallery/assets/24430655/ed5a5781-084d-43a1-b0df-1fe253039dcd)
+
+<video src="https://github.com/sergiosolorzano/ai_gallery/assets/24430655/6962f72a-3057-4cac-9fbe-91c9e4f99be4" controls="controls" muted="muted" playsinline="playsinline">
+      </video>
+
+---------------------------------------------
+```
+Repo File Structure:
+.
+â”œâ”€â”€ creds.json            #enter your Azure OpenAI API credentials, sample below
+â”œâ”€â”€ descriptions.txt      #poem description
+â”œâ”€â”€ images                #poem and dalle output
+â”œâ”€â”€ LICENSE    
+â”œâ”€â”€ README.md
+â”œâ”€â”€ request_manager.py    #manager calling scripts to send requests to chatgpt3.5 and dalle models
+â”œâ”€â”€ send_dalle_request.py #Azure OpenAI send request method to dalle
+â”œâ”€â”€ send_gpt35_request.py #Azure OpenAI send request method to gpt3.5_turbo
+â””â”€â”€ user_inputs.py        #request inputs
+
+Complete creds.json with your Azure OpenAI credentials:
+{
+    "chatgpt35_openai_api": {
+        "OPENAI_API_KEY": "",
+        "OPENAI_API_VERSION": "",
+        "OPENAI_API_BASE": "",
+        "OPENAI_API_TYPE": "",
+        "OPENAI_API_DEPLOYMENT_NAME": ""
+    },
+    "dalle_openai_api": {
+        "OPENAI_API_KEY": "",
+        "OPENAI_API_VERSION": "",
+        "OPENAI_API_BASE": "",
+        "OPENAI_API_TYPE": "",
+        "OPENAI_API_DEPLOYMENT_NAME": "DOES_NOT_APPLY_NA"
+    }
+}
+---------------------------------------------
+```
+
+See code decorator branch for ChatGPT assisted poem description. You can read more about this generation flow at [our Blog at Tapgaze: Part II: Chained Specialized AI Models Deliver Better Results](https://tapgaze.com/blog/chained-ai-models/)
+
+Inputs at:
+user_inputs.py and creds.json
+
+---------------------------------------------
+<br>If you find this helpful you can buy me a coffee :)
+   
+<a href="https://www.buymeacoffee.com/sergiosolorzano" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
+      
+
+
+
+================================================
+File: LICENSE
+================================================
+                                 Apache License
+                           Version 2.0, January 2004
+                        http://www.apache.org/licenses/
+
+   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
+
+   1. Definitions.
+
+      "License" shall mean the terms and conditions for use, reproduction,
+      and distribution as defined by Sections 1 through 9 of this document.
+
+      "Licensor" shall mean the copyright owner or entity authorized by
+      the copyright owner that is granting the License.
+
+      "Legal Entity" shall mean the union of the acting entity and all
+      other entities that control, are controlled by, or are under common
+      control with that entity. For the purposes of this definition,
+      "control" means (i) the power, direct or indirect, to cause the
+      direction or management of such entity, whether by contract or
+      otherwise, or (ii) ownership of fifty percent (50%) or more of the
+      outstanding shares, or (iii) beneficial ownership of such entity.
+
+      "You" (or "Your") shall mean an individual or Legal Entity
+      exercising permissions granted by this License.
+
+      "Source" form shall mean the preferred form for making modifications,
+      including but not limited to software source code, documentation
+      source, and configuration files.
+
+      "Object" form shall mean any form resulting from mechanical
+      transformation or translation of a Source form, including but
+      not limited to compiled object code, generated documentation,
+      and conversions to other media types.
+
+      "Work" shall mean the work of authorship, whether in Source or
+      Object form, made available under the License, as indicated by a
+      copyright notice that is included in or attached to the work
+      (an example is provided in the Appendix below).
+
+      "Derivative Works" shall mean any work, whether in Source or Object
+      form, that is based on (or derived from) the Work and for which the
+      editorial revisions, annotations, elaborations, or other modifications
+      represent, as a whole, an original work of authorship. For the purposes
+      of this License, Derivative Works shall not include works that remain
+      separable from, or merely link (or bind by name) to the interfaces of,
+      the Work and Derivative Works thereof.
+
+      "Contribution" shall mean any work of authorship, including
+      the original version of the Work and any modifications or additions
+      to that Work or Derivative Works thereof, that is intentionally
+      submitted to Licensor for inclusion in the Work by the copyright owner
+      or by an individual or Legal Entity authorized to submit on behalf of
+      the copyright owner. For the purposes of this definition, "submitted"
+      means any form of electronic, verbal, or written communication sent
+      to the Licensor or its representatives, including but not limited to
+      communication on electronic mailing lists, source code control systems,
+      and issue tracking systems that are managed by, or on behalf of, the
+      Licensor for the purpose of discussing and improving the Work, but
+      excluding communication that is conspicuously marked or otherwise
+      designated in writing by the copyright owner as "Not a Contribution."
+
+      "Contributor" shall mean Licensor and any individual or Legal Entity
+      on behalf of whom a Contribution has been received by Licensor and
+      subsequently incorporated within the Work.
+
+   2. Grant of Copyright License. Subject to the terms and conditions of
+      this License, each Contributor hereby grants to You a perpetual,
+      worldwide, non-exclusive, no-charge, royalty-free, irrevocable
+      copyright license to reproduce, prepare Derivative Works of,
+      publicly display, publicly perform, sublicense, and distribute the
+      Work and such Derivative Works in Source or Object form.
+
+   3. Grant of Patent License. Subject to the terms and conditions of
+      this License, each Contributor hereby grants to You a perpetual,
+      worldwide, non-exclusive, no-charge, royalty-free, irrevocable
+      (except as stated in this section) patent license to make, have made,
+      use, offer to sell, sell, import, and otherwise transfer the Work,
+      where such license applies only to those patent claims licensable
+      by such Contributor that are necessarily infringed by their
+      Contribution(s) alone or by combination of their Contribution(s)
+      with the Work to which such Contribution(s) was submitted. If You
+      institute patent litigation against any entity (including a
+      cross-claim or counterclaim in a lawsuit) alleging that the Work
+      or a Contribution incorporated within the Work constitutes direct
+      or contributory patent infringement, then any patent licenses
+      granted to You under this License for that Work shall terminate
+      as of the date such litigation is filed.
+
+   4. Redistribution. You may reproduce and distribute copies of the
+      Work or Derivative Works thereof in any medium, with or without
+      modifications, and in Source or Object form, provided that You
+      meet the following conditions:
+
+      (a) You must give any other recipients of the Work or
+          Derivative Works a copy of this License; and
+
+      (b) You must cause any modified files to carry prominent notices
+          stating that You changed the files; and
+
+      (c) You must retain, in the Source form of any Derivative Works
+          that You distribute, all copyright, patent, trademark, and
+          attribution notices from the Source form of the Work,
+          excluding those notices that do not pertain to any part of
+          the Derivative Works; and
+
+      (d) If the Work includes a "NOTICE" text file as part of its
+          distribution, then any Derivative Works that You distribute must
+          include a readable copy of the attribution notices contained
+          within such NOTICE file, excluding those notices that do not
+          pertain to any part of the Derivative Works, in at least one
+          of the following places: within a NOTICE text file distributed
+          as part of the Derivative Works; within the Source form or
+          documentation, if provided along with the Derivative Works; or,
+          within a display generated by the Derivative Works, if and
+          wherever such third-party notices normally appear. The contents
+          of the NOTICE file are for informational purposes only and
+          do not modify the License. You may add Your own attribution
+          notices within Derivative Works that You distribute, alongside
+          or as an addendum to the NOTICE text from the Work, provided
+          that such additional attribution notices cannot be construed
+          as modifying the License.
+
+      You may add Your own copyright statement to Your modifications and
+      may provide additional or different license terms and conditions
+      for use, reproduction, or distribution of Your modifications, or
+      for any such Derivative Works as a whole, provided Your use,
+      reproduction, and distribution of the Work otherwise complies with
+      the conditions stated in this License.
+
+   5. Submission of Contributions. Unless You explicitly state otherwise,
+      any Contribution intentionally submitted for inclusion in the Work
+      by You to the Licensor shall be under the terms and conditions of
+      this License, without any additional terms or conditions.
+      Notwithstanding the above, nothing herein shall supersede or modify
+      the terms of any separate license agreement you may have executed
+      with Licensor regarding such Contributions.
+
+   6. Trademarks. This License does not grant permission to use the trade
+      names, trademarks, service marks, or product names of the Licensor,
+      except as required for reasonable and customary use in describing the
+      origin of the Work and reproducing the content of the NOTICE file.
+
+   7. Disclaimer of Warranty. Unless required by applicable law or
+      agreed to in writing, Licensor provides the Work (and each
+      Contributor provides its Contributions) on an "AS IS" BASIS,
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+      implied, including, without limitation, any warranties or conditions
+      of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A
+      PARTICULAR PURPOSE. You are solely responsible for determining the
+      appropriateness of using or redistributing the Work and assume any
+      risks associated with Your exercise of permissions under this License.
+
+   8. Limitation of Liability. In no event and under no legal theory,
+      whether in tort (including negligence), contract, or otherwise,
+      unless required by applicable law (such as deliberate and grossly
+      negligent acts) or agreed to in writing, shall any Contributor be
+      liable to You for damages, including any direct, indirect, special,
+      incidental, or consequential damages of any character arising as a
+      result of this License or out of the use or inability to use the
+      Work (including but not limited to damages for loss of goodwill,
+      work stoppage, computer failure or malfunction, or any and all
+      other commercial damages or losses), even if such Contributor
+      has been advised of the possibility of such damages.
+
+   9. Accepting Warranty or Additional Liability. While redistributing
+      the Work or Derivative Works thereof, You may choose to offer,
+      and charge a fee for, acceptance of support, warranty, indemnity,
+      or other liability obligations and/or rights consistent with this
+      License. However, in accepting such obligations, You may act only
+      on Your own behalf and on Your sole responsibility, not on behalf
+      of any other Contributor, and only if You agree to indemnify,
+      defend, and hold each Contributor harmless for any liability
+      incurred by, or claims asserted against, such Contributor by reason
+      of your accepting any such warranty or additional liability.
+
+   END OF TERMS AND CONDITIONS
+
+   APPENDIX: How to apply the Apache License to your work.
+
+      To apply the Apache License to your work, attach the following
+      boilerplate notice, with the fields enclosed by brackets "[]"
+      replaced with your own identifying information. (Don't include
+      the brackets!)  The text should be enclosed in the appropriate
+      comment syntax for the file format. We also recommend that a
+      file or class name and description of purpose be included on the
+      same "printed page" as the copyright notice for easier
+      identification within third-party archives.
+
+   Copyright [yyyy] [name of copyright owner]
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+
+
+================================================
+File: descriptions.txt
+================================================
+Writer_style:Poem_directory:Poem_description
+Simon Armitage:Machines_Love: how machines will feel when they can feel
+Simon Armitage:Machines_Rewrite:how machines will rewrite human history
+Simon Armitage:Climate_Change_1:humans must take action yesterday, urgent climate action can secure a liveable future for all
+Simon Armitage:Climate_Change_2:Global biodiversity has declined alarmingly in half a century
+Simon Armitage:Sports_matter:sports means so much to humanity
+Simon Armitage:Hardcopy_Books: Are physical books still relevant today?
+Simon Armitage:Mobile_Dependence: Smartphones are now extensions of humankind's abilities and personality
+Simon Armitage:Local_shops: When society looks back to the loss of having local shops it will be too late
+Simon Armitage:Smoking_is_a_right: being forbidden to smoke is a loss of human rights, all should have this right to choose
+Simon Armitage:Artists_replacement: Artists originality could never be replaced because it's a gift
+Simon Armitage:Maths_learning: Learning maths from top-down instead of bottom-up is more engaging
+Simon Armitage:Dog_friends: Dogs are happy by nature and always keen to make people feel better
+Simon Armitage:Water: one of the greatest satisfactions is a glass of water when you need it
+Simon Armitage:Love_and_selfishness: People's ability to love is a balance with their own selfishness
+Simon Armitage:Childrens_expectations: Children are loved so much but the life that awaits is never that loving
+
+
+================================================
+File: request_manager.py
+================================================
+#!/usr/bin/env python3
+import user_inputs as inputs
+import send_dalle_request
+import send_gpt35_request
+import requests
+import os
+from PIL import Image
+import json
+import openai
+import datetime
+
+#global vars
+deployment_name = ""
+poem_writer_style_list = []
+
+def main():
+    #log the startime
+    start_time = datetime.datetime.now()
+    print("Script started:",start_time)
+
+    #open exceptions at request
+    dalle_errors = 0
+    dalle_errors_list=[]
+
+    #bool to call chatgpt to write poems
+    write_poems = True
+    show_images_runtime = False
+
+    #load config
+    path_to_file = os.path.join(os.getcwd(), "creds.json")
+    with open(path_to_file) as f:
+        config_data = json.load(f)
+
+    # Set the directory where we'll store the image, create dir if not exist
+    root_image_dir = os.path.join(os.curdir, 'images')
+    generate_dir(root_image_dir)
+
+    if write_poems:
+        #set openai credentials
+        set_chatgpt_credentials(config_data)
+        #ask gpt to write poems
+        poems_written_done = send_gpt35_request.send_request(root_image_dir, openai, deployment_name, poem_writer_style_list)
+
+        if poems_written_done is True:
+            print("Finished writing poems."); print()
+        else:
+            print("Could not finish writing poems."); print()
+
+    #scan poem dir into list
+    poem_dir_fullpath_list = get_subfolder_dir_paths(os.getcwd(), root_image_dir)
+    print("dir list", poem_dir_fullpath_list)
+
+    #set dalle credentials
+    # set openai credentials
+    set_dalle_credentials(config_data)
+
+    #get poem content for each poem dir
+    for poem_dir_path in poem_dir_fullpath_list:
+        res, num = inputs.get_prompt()
+        poem_tail_dir = get_last_subdir_name(poem_dir_path)
+        poem_fn_path = os.path.join(poem_dir_path, poem_tail_dir + ".txt")
+        if os.path.exists(poem_fn_path):
+            poem_content = read_file_into_title_and_poem(poem_fn_path)
+
+            poem_title = poem_content[0].strip()
+            poem_text = ''.join(poem_content[1:])
+            full_prompt = "\nPoem Title:" + poem_title + "\nPoem: " + poem_text
+
+            #create image dirs
+            generate_dir(poem_dir_path)
+
+            #request image
+            for painter in inputs.painter_list:
+                print("At painter:",painter)
+                resp_data = send_dalle_request.send_request(full_prompt, res, num, openai, poem_writer_style_list, poem_tail_dir, painter)
+                print("***resp_data received",resp_data)
+
+                #store and show image
+                counter = 0
+                image_name = os.path.basename(os.path.normpath(poem_dir_path))
+                if "Error" not in resp_data:
+                    for image in resp_data:
+                        #print("***image in resp_data",image)
+                        if "Error" not in image:
+                            image_name = image_name + '_' + painter.replace(" ", "") + '_' + str(counter) + '.png'
+                            #print("image_name",image_name)
+                            image_path = os.path.join(poem_dir_path, image_name)
+                            #print("Store image at " + image_path)
+
+                            #download and store images for this poem
+                            image_url = get_url(image)
+                            if image_url != "":
+                                store_image(image_url, image_path)
+                                counter += 1
+                                print(f"url {image_path}:", image_url)
+                                # Open and display image
+                                if show_images_runtime:
+                                    image = Image.open(image_path)
+                                    image.show(title=image_name)
+                        else:
+                            dalle_errors += 1
+                            dalle_errors_list.append(image_name+"_"+painter)
+                            print("Error getting this image -this img response" + image + " full response" + resp_data)
+                else:
+                    dalle_errors += 1
+                    dalle_errors_list.append(image_name+"_"+painter)
+
+            end_time = datetime.datetime.now()
+            time_elapsed = end_time - start_time
+    print("End of Script. Time elapsed:", time_elapsed, "Dalle errors:",dalle_errors, "at", dalle_errors_list)
+
+def get_url(response):
+    url = ""
+    if 'url' in response:
+        url = response['url']
+    return url
+def generate_dir(image_dir):
+    if not os.path.isdir(image_dir):
+        os.mkdir(image_dir)
+
+def store_image(image_url, image_path):
+    generated_image = requests.get(image_url).content
+    with open(image_path, "wb") as image_file:
+        image_file.write(generated_image)
+
+def read_file_into_title_and_poem(filename):
+    with open(filename, 'r') as file:
+        lines = file.readlines()
+    return lines
+
+def get_subfolder_dir_paths(parent_folder, sub_folder):
+    # Combine the parent_folder and sub_folder to form the complete path
+    sub_folder_path = os.path.join(parent_folder, sub_folder)
+
+    # Check if the sub-folder path exists
+    if not os.path.exists(sub_folder_path) or not os.path.isdir(sub_folder_path):
+        print("Sub-folder not found.")
+        return []
+
+    # Get all the items (files and directories) in the sub-folder
+    items = os.listdir(sub_folder_path)
+
+    # Filter out only the directory names
+    directory_full_paths = [os.path.join(sub_folder_path, item) for item in items if os.path.isdir(os.path.join(sub_folder_path, item))]
+
+    return directory_full_paths
+
+def get_last_subdir_name(full_path):
+    dirs = full_path.split(os.sep)
+    last_subdir_name = dirs[-1]
+    return last_subdir_name
+
+def set_chatgpt_credentials(config_data):
+    openai.api_version = config_data["chatgpt35_openai_api"]['OPENAI_API_VERSION']
+    openai.api_type = config_data["chatgpt35_openai_api"]['OPENAI_API_TYPE']
+    openai.api_base = config_data["chatgpt35_openai_api"]['OPENAI_API_BASE']
+    openai.api_key = config_data["chatgpt35_openai_api"]['OPENAI_API_KEY']
+    global deployment_name
+    deployment_name = config_data["chatgpt35_openai_api"]['OPENAI_API_DEPLOYMENT_NAME']
+
+def set_dalle_credentials(config_data):
+    openai.api_version = config_data["dalle_openai_api"]['OPENAI_API_VERSION']
+    openai.api_type = config_data["dalle_openai_api"]['OPENAI_API_TYPE']
+    openai.api_base = config_data["dalle_openai_api"]['OPENAI_API_BASE']
+    openai.api_key = config_data["dalle_openai_api"]['OPENAI_API_KEY']
+    global deployment_name
+    deployment_name = config_data["dalle_openai_api"]['OPENAI_API_DEPLOYMENT_NAME']
+
+if __name__ == "__main__":
+    main()
+
+
+
+================================================
+File: send_dalle_request.py
+================================================
+#!/usr/bin/env python3
+
+def send_request(userprompt, res, num, openai, poem_style_list, poem_tail_dir, painter_style):
+    print("Sending request for userprompt:", userprompt, "\nres", res, "\nnum", num)
+
+    #get image style
+    poem_styles = [sublist for sublist in poem_style_list if sublist[0] == poem_tail_dir]
+    img_style = f'Draw this poem {painter_style} style:'
+    userprompt = img_style + userprompt
+    try:
+        response = openai.Image.create(
+            prompt=userprompt,
+            size=res,
+            n=num
+        )
+        response_data = response["data"]
+        print("***Dalle res_data:", response_data)
+        return response_data
+    except openai.error.OpenAIError as e:
+        return f"Error: {e}"
+    except Exception as e:
+        return f"Error: {e}"
+
+
+
+
+================================================
+File: send_gpt35_request.py
+================================================
+#!/usr/bin/env python3
+import os
+import json
+import user_inputs
+
+def send_request(root_image_dir, openai, deployment_name, poem_style):
+    this_conversation = []
+    poem_description_list = get_text_from_file()
+    print("Number poems to process:", len(poem_description_list))
+    for desc in poem_description_list:
+        writer_style = desc[0]
+        poem_folder = desc[1]
+        poem_description = desc[2]
+        poem_style.append([poem_folder, writer_style])
+        print(); print("-"*30); print("Send Request to Write Poem: Writer Style", writer_style, "Poem Folder:", poem_folder + ".", " Poem Description:", poem_description)
+
+        #check poem does not exist
+        if check_poem_exists(os.path.join(root_image_dir, poem_folder, poem_folder+".txt")):
+            print();print("Skip: Poem",os.path.join(root_image_dir, poem_folder, poem_folder+".txt"), "exists"); print()
+            continue
+
+        try:
+            system_message = {"role": "system", "content": f"You are a modern 21st century poem writer very similar to {writer_style} style. You response with a JSON object and do not add any other text to your response."}
+            this_conversation.append(system_message)
+            content_to_gpt = f'Write a poem of no more than {user_inputs.poem_tokens} tokens as per this description: {poem_description} .Return JSON Object that has two elements, Title with the title of your poem, and Poem with the content of your poem. Do not add any other text.'
+            this_conversation.append({"role": "user", "content": content_to_gpt})
+
+            response = openai.ChatCompletion.create(
+                engine=deployment_name,
+                messages=this_conversation,
+                temperature=0.7,
+                max_tokens=3000,
+            )
+            print("GPT Poem Received",response['choices'][0]['message']['content'])
+            try:
+                resp_json = json.loads(response['choices'][0]['message']['content'])
+                poem_title = resp_json["Title"]
+                poem_desc = resp_json["Poem"]
+                write_response_to_file(root_image_dir, poem_folder, poem_title, poem_desc)
+            except Exception as e:
+                print(f"Skip: Failed to parse json.{poem_folder}", e)
+
+        except openai.OpenAIError as e:
+            # Handle connection error or timeout here
+            print(f"1;31m[WARNING]\033[0mAn OpenAI error occurred:\033[0m ", str(e), "received " + response['choices'][0]['message']['content'])
+            exit(1)
+
+    return True
+
+def get_text_from_file():
+    # get text from file for prompt
+    txt_filepath = "descriptions.txt"
+    description_list = []
+    skip_first_line = True
+    with open(txt_filepath, 'r') as file:
+        for line in file:
+            if skip_first_line:
+                skip_first_line = False
+                continue
+            elements = line.strip().split(":")
+            this_poem_list = []
+            for e in elements:
+                this_poem_list.append(e)
+            description_list.append(this_poem_list)
+
+    return description_list
+
+def write_response_to_file(root_image_dir, poem_folder, poem_title, poem_desc):
+    poem_dir_path = os.path.join(root_image_dir, poem_folder)
+    poem_text_path = os.path.join(root_image_dir, poem_folder, poem_folder+".txt")
+    generate_dir(poem_dir_path)
+    with open(poem_text_path, 'w') as file:
+        file.write(poem_title+"\n\n")
+        file.write(poem_desc)
+
+def check_poem_exists(poem_text_path):
+    if os.path.exists(poem_text_path):
+        return True
+    else:
+        return False
+
+def generate_dir(image_dir):
+    if not os.path.isdir(image_dir):
+        os.mkdir(image_dir)
+
+
+================================================
+File: user_inputs.py
+================================================
+#!/usr/bin/env python3
+
+#dalle
+resolution = '1024x1024'
+number_imgs = 1
+#gpt writer
+poem_tokens = 700
+painter_list = ["Vincent van Gogh", "Gustave Courbet", "Grant Wood", "Leonardo da Vinci", "Jacques-Louis David", "Sandro Botticelli", "Henri Matisse", "Peter Paul Rubens", "Pierre-Auguste Renoir", "Johannes Vermeer", "Edvard Munch", "Salvador Dali"]
+
+def get_prompt():
+    return resolution, number_imgs
+
