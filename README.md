@@ -6,6 +6,8 @@
 
 </div>
 
+<div align="center">Git digest for performing LLM ingestion: ./gitingest/ai_gallery_digest.txt</div>
+
 
 Batch prompt from file for chatgpt 3.5-turbo to write poems inspired on a poet writing style and Dall-e to draw these inspired by the style of several artists. Requests to Azure OpenAI API.
 
